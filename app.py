@@ -17,7 +17,7 @@ def index():
 # Factorial route for form post
 @app.route('/factorial/', methods=['GET', 'POST'])
 def factorial():
-    n = int(request.form.get('number'))
+    n = int(request.json['number']) 
     result = fact(n)
     data = {'factorial': result}
     data = jsonify(data)

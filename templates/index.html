@@ -16,33 +16,18 @@
                     <h3>Factorial Calculator</h3>
                 </div>
 
-                <form method="post" id="form" class="flex-container column space-around">
+                <form id="form" class="flex-container column space-around" onSubmit='return;'>
                     <div class="flex-container row center">
                         <label for="num">Enter your number...</label>
                     </div>
                     <input type="text" id="num" name="number" autofocus autocomplete="off">
-                    <button>Lets math</button>
+                    <button id='submit'>Let's math</button>
                 </form>
                 <p id="factorial"></p>
             </div>
         </div>
 
-
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script>
-			$('#form').on('submit', function(e){
-				var number = $('#num').val();
-				e.preventDefault();
-				$.ajax({
-					url: '/factorial/',
-					data: {'number': number},
-					method: 'POST',
-					success: function(data) {
-						$('#num').val('');
-						$('#factorial').html('factorial of ' + number + ' is ' + data['factorial'])
-					}
-				});
-			});
-		</script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        
     </body>
 </html>
