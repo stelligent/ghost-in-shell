@@ -6,17 +6,28 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
     <body>
-        <div class="row center">
+        <div class="flex-container row center">
             <h1>The Ghost in the shell</h1>
         </div>
 
-        <h1>Factorial Calculator</h1>
-		<form method="post" id="form">
-			<label for="num">Enter Number : </label>
-			<input type="text" id="num" name="number" autofocus autocomplete="off">
-			<button>Post</button>
-		</form>
-		<p id="factorial"></p>
+        <div class="flex-container row center">
+            <div class="flex-container column">
+                <div class="flex-container row center">
+                    <h3>Factorial Calculator</h3>
+                </div>
+
+                <form method="post" id="form" class="flex-container column space-around">
+                    <div class="flex-container row center">
+                        <label for="num">Enter your number...</label>
+                    </div>
+                    <input type="text" id="num" name="number" autofocus autocomplete="off">
+                    <button>Lets math</button>
+                </form>
+                <p id="factorial"></p>
+            </div>
+        </div>
+
+
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script>
 			$('#form').on('submit', function(e){

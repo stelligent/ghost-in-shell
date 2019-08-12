@@ -3,19 +3,43 @@ html, body {
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
+    -webkit-flex-direction: column;
+    flex-direction: column;
 }
 
 .center {
     justify-content: center;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+#form {
+    background-color: #FFF;
+    min-height: 180px;
+    min-width: 320px;
+}
+
+#factorial {
+    text-align: center;
 }
