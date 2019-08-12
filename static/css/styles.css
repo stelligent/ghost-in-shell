@@ -12,7 +12,6 @@ html, body {
 .column {
   display: flex;
   flex-direction: column;
-justify-content: center;
   flex-basis: 100%;
   flex: 1;
 }

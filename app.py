@@ -1,14 +1,29 @@
-from flask import render_template, url_for, Flask
+from flask import render_template, url_for, Flask, request, jsonify
 
 app = Flask(__name__)
 
-def factorial(n):
-    return 1 if (n < 1) else n * factorial(n - 1)
+
+# Recursive factorial function
+def fact(n):
+    return 1 if (n < 1) else n * fact(n - 1)
 
 
-@app.route('/', methods=['GET', 'POST'])
+# Default route
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
+
+# Factorial route for form post
+@app.route('/factorial/', methods=['GET', 'POST'])
+def factorial():
+    n = int(request.form.get('number'))
+    result = fact(n)
+    data = {'factorial': result}
+    data = jsonify(data)
+    return data
+
+
+# Main func
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

@@ -10,16 +10,28 @@
             <h1>The Ghost in the shell</h1>
         </div>
 
-        <div class="row center">
-            <form method="post">
-                <div class="column">
-                    <label>
-                        Enter a number for the <a href="https://simple.wikipedia.org/wiki/Factorial">factorial</a>
-                    </label>
-                    <input name="number" placeholder="Enter a number">
-                    <button>Lets Roll</button>
-                </div>
-            </form>
-        </div>
+        <h1>Factorial Calculator</h1>
+		<form method="post" id="form">
+			<label for="num">Enter Number : </label>
+			<input type="text" id="num" name="number" autofocus autocomplete="off">
+			<button>Post</button>
+		</form>
+		<p id="factorial"></p>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+			$('#form').on('submit', function(e){
+				var number = $('#num').val();
+				e.preventDefault();
+				$.ajax({
+					url: 'http://127.0.0.1:5000/factorial/',
+					data: {'number': number},
+					method: 'POST',
+					success: function(data) {
+						$('#num').val('');
+						$('#factorial').html('factorial of ' + number + ' is ' + data['factorial'])
+					}
+				});
+			});
+		</script>
     </body>
 </html>
