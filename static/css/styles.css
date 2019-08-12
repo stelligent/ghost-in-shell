@@ -35,6 +35,8 @@ html, body {
 }
 
 #form {
+    padding: 10px;
+    border-radius: 5px;
     background-color: #FFF;
     min-height: 180px;
     min-width: 320px;
