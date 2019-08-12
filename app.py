@@ -1,12 +1,14 @@
-from flask import Flask, render_template
+from flask import render_template, url_for, Flask
 
 app = Flask(__name__)
 
+def factorial(n):
+    return 1 if (n < 1) else n * factorial(n - 1)
 
-@app.route('/')
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return app.send_static_file('index.html')
-
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
