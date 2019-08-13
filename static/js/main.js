@@ -18,7 +18,7 @@ const handler = (e) => {
             console.log('response', response)
             console.log('json', json)
             numElement.value = '';
-            factorialElement.textContent = `factorial of ${number} is ${json['factorial']}` 
+            factorialElement.textContent = `The factorial of ${number} is ${json['factorial']}.`
         })
     })
 };

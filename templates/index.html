@@ -1,20 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ghost in the Shell</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    </head>
-    <body>
-        <div class="flex-container row center">
-            <h1>The Ghost in the shell</h1>
-        </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <div class="flex-container row center">
+    <title>The Ghost in the Shell</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">The Ghost in the Shell</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Factorial Calculator</h1>
+          <div class="flex-container row center">
             <div class="flex-container column">
-                <div class="flex-container row center">
-                    <h3>Factorial Calculator</h3>
-                </div>
 
                 <form id="form" class="flex-container column space-around" onSubmit='return;'>
                     <div class="flex-container row center">
@@ -28,6 +43,13 @@
         </div>
 
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-        
-    </body>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>In 1677, Fabian Stedman described factorials as applied to change ringing, a musical art involving the ringing of many tuned bells.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
